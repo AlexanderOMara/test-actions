@@ -2,8 +2,8 @@ name: Main Action
 
 on:
   push:
-    branches:
-      - '!pages'
+    branches-ignore:
+    - pages
 
 jobs:
   build:
