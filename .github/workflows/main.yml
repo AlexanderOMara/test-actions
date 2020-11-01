@@ -7,11 +7,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - script: build:linux
+          - id: linux
             os: ubuntu-20.04
-          - script: build:macos
+          - id: macos
             os: macos-10.15
-          - script: build:windows
+          - id: windows
             os: windows-2019
     runs-on: ${{ matrix.os }}
     steps:
@@ -20,10 +20,10 @@ jobs:
       with:
         node-version: v15.0.1
     - run: npm install
-    - run: npm run ${{ matrix.script }}
+    - run: npm run build:${{ matrix.id }}
     - uses: actions/upload-artifact@v2
       with:
-        name: build
+        name: build-${{ matrix.id }}
         path: dist/*
     - name: Release
       uses: softprops/action-gh-release@v1
