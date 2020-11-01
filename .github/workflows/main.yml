@@ -11,7 +11,9 @@ jobs:
       with:
         node-version: v15.0.1
     - run: npm install
-    - run: npm run build
+    - run: npm run build:windows
+    - run: npm run build:macos
+    - run: npm run build:linux
     - uses: actions/upload-artifact@v2
       with:
         name: build
