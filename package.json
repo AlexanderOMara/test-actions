@@ -3,7 +3,8 @@
 	"scripts": {
 		"build:windows": "node build.js windows",
 		"build:macos": "node build.js macos",
-		"build:linux": "node build.js linux"
+		"build:linux": "node build.js linux",
+		"build:pages": "node build.js pages"
 	},
 	"devDependencies": {
 		"fs-extra": "^9.0.1"
