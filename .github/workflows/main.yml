@@ -1,7 +1,9 @@
 name: Main Action
 
 on:
-- push
+  push:
+    branches:
+      - '!pages'
 
 jobs:
   build:
